@@ -1,5 +1,5 @@
 # ANALYZING-FIFA-21-
-30 Days DuckDB Challenge On FIFA 21 Player Dataset Analysis
+# 30 Days DuckDB Challenge On FIFA 21 Player Dataset Analysis
 
 ![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/e962fa62-681e-463b-805c-457b199a6f6a)
 
