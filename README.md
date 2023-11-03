@@ -86,23 +86,75 @@ i) Converted the 'Hits" column to an integer
 
 ### Day 7-9 Challenge: Querying the Datasets for insights
 
-a) Identify players who possess high value but receive relatively low wages.
+### a) Identify players who possess high value but receive relatively low wages.
 
-b) Determine the count of players available in the dataset for each position.
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/d09ec31b-2495-4ac0-b786-edd574fe1e0d)
 
-c) Find out which club has the largest representation of players in the dataset.
 
-d) List the top 10 players with the highest OVA and POT values.
+### b) Determine the count of players available in the dataset for each position.
 
-f) Find players with the highest OVA and POT within each club.
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/9385298e-41f6-402d-bc5a-15c4fee68521)
 
-g) Calculate the average OVA for players under 25 years old and over 30 years old in each club.
 
-h) List the players who have the same age within each club.
+### c) Find out which club has the largest representation of players in the dataset.
 
-i) Find the player with the highest POT for each nationality
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/db63f629-bbce-4b11-bdbe-398a98d9e592)
 
-j) Rank players by their OVA in descending order within each club
+
+### d) List the top 10 players with the highest OVA and POT values.
+
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/56e43e13-5d08-4696-ba89-3f1810f35331)
+
+
+### f) Find players with the highest OVA and POT within each club.
+
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/d47c6525-b55b-4ff8-afc2-dc960c90bb4c)
+
+### g) Calculate the average OVA for players under 25 years old and over 30 years old in each club.
+
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/d94efb4d-b91a-4356-95c1-672eaa0eab84)
+
+
+### h) List the players who have the same age within each club.
+
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/53f63046-479a-4e4d-a406-d2af98591725)
+
+
+
+### i) Find the player with the highest POT for each nationality
+
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/50b3cafd-bf0b-4202-b415-d742d963214d)
+
+
+### j) Rank players by their OVA in descending order within each club
+
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/2c1ca7d0-781c-41c9-acfc-4d20aaf3ff21)
+
+
+# CONCLUSION AND OBSERVATION
+
+The analysis of the FIFA 21 dataset has provided valuable insights into the world of football (soccer) and the digital representation of players in the popular FIFA video game. This analysis has allowed us to draw meaningful conclusions and understand the importance and benefits of working with such datasets.
+
+**Key Findings and Insights:**
+1. **Player Profiling:** We've gained a comprehensive understanding of individual players, including their performance metrics, preferred positions, and attributes. This   
+   information can be invaluable for gamers and football enthusiasts looking to make informed decisions about player selection in the game.
+
+2. **Club and Contract Data:** The dataset sheds light on the relationships between players and their respective clubs, along with contract's details. This can be beneficial 
+   for club management simulations, career mode enthusiasts, and fantasy football players.
+
+3. **Market Value and Wage:** We've learned about the market values and wages of players. This data can be useful for evaluating player economics in the context of real-- 
+   world football transfers.
+
+4. **Nationality and Age Analysis:** The dataset allows for demographic analysis, such as the distribution of players by nationality and age, which can be insightful for 
+   assessing the diversity and age composition of the player pool.
+
+5. **Market Analysis:** Understanding player values and wages can be vital for sports marketers, sponsors, and clubs to gauge the marketability and financial implications 
+   of player endorsements.
+
+
+
+In conclusion, the FIFA 21 dataset not only enhances the gaming experience but also extends its utility to the real-world football industry, research, and education. It highlights the power of data analysis in making informed decisions and exploring the diverse aspects of the beautiful game. Whether for entertainment, research, or professional purposes, the importance and benefits of such datasets are undeniable, and they continue to play a vital role in the ever-evolving landscape of sports analytics and gaming.
+
 
 
 
