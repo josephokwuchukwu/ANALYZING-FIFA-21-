@@ -4,8 +4,11 @@
 ![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/e962fa62-681e-463b-805c-457b199a6f6a)
 
 # Introduction
-Welcome to 
-I will be working with two datasets Fifa_21_raw1 and Fifa_21_raw2. They both have the same column names. This dataset contains information on football (soccer) players from the FIFA 21 game, including details such as their names, nationalities, ages, positions, club affiliations, contract dates, and various performance metrics.
+Welcome,
+
+I'll be working with two datasets, Fifa_21_raw1 and Fifa_21_raw2, both featuring identical column names. These datasets contain football (soccer) player information from the FIFA 21 video game. They encompass details such as player names, nationalities, ages, positions, club affiliations, contract dates, and a wide array of performance metrics.
+
+The #30daysduckdbchallenge has been an extraordinary journey in the realm of data analysis. It has not only honed my SQL skills but has also showcased the capabilities of DuckDB in effectively managing real-world data challenges. You can find all the SQL code examples as written in 
 
 Here's an overview of the key columns in this datasets:
 
