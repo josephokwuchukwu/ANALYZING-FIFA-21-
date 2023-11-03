@@ -40,8 +40,9 @@ Here's an overview of the key columns in this datasets:
 
 This dataset is rich in information about FIFA 21 players, making it an excellent resource for various data analysis and visualization tasks, especially for fans of the game or those interested in football statistics. You can explore player performance, club affiliations, potential stars, and more.
 
+# WEEK 1 
 
-# DAY 1 CHALLENGE: SETTING UP MY WORKING ENVIRONMENT
+## DAY 1 CHALLENGE: SETTING UP MY WORKING ENVIRONMENT
 
 **.** Created an account with MotherDuck
 
@@ -49,9 +50,9 @@ This dataset is rich in information about FIFA 21 players, making it an excellen
 
 
 
-# WEEK 1 
 
-# DAY 2 & 3 CHALLENGE: 
+
+## DAY 2 & 3 CHALLENGE: 
 
 (a) I created a  DuckDB database named **TheChallenge**
 
