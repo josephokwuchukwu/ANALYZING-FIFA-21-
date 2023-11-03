@@ -1,0 +1,207 @@
+--to import the first dataset
+SELECT * FROM read_csv_auto(["C:\Users\CHICHI\Desktop\Fifa\fifa21_raw_data.csv"]);
+CREATE TABLE Fifa_21_raw1 AS SELECT * 
+FROM read_csv_auto(["C:\Users\CHICHI\Desktop\Fifa\fifa21_raw_data.csv"]);
+
+-- To import the second datyaset
+SELECT * FROM read_csv_auto(["C:\Users\CHICHI\Desktop\Fifa\fifa21 raw data v2.csv"]);
+CREATE TABLE Fifa_21_raw2 AS SELECT * 
+FROM read_csv_auto(["C:\Users\CHICHI\Desktop\Fifa\fifa21 raw data v2.csv"]);
+
+--To display the entire table
+SELECT * 
+FROM main.Fifa_21_raw1;
+
+-- to create a new column that will house the converted weight
+ALTER TABLE Fifa_21_raw1
+ADD COLUMN weight_Int INT;
+
+--to convert the value 
+UPDATE Fifa_21_raw1
+SET Weight_Int = LEFT(Weight,3);
+
+--TO transform my data i will need to delete the previous height column
+ALTER TABLE fifa_21_raw1
+DROP COLUMN Weight;
+
+--To rename the newly created column to the previous column name
+ALTER TABLE fifa_21_raw1
+RENAME COLUMN Weight_Int TO Weight
+
+--to change the Height column to INT data type adding a new column named weight_int that will house the converted Height values
+ALTER TABLE fifa_21_raw1
+ADD COLUMN Height_Int INT;
+
+--to convert the value we want to convert
+UPDATE fifa_21_raw1
+SET Height_Int = LEFT(Height,1);
+
+--TO transform my data i will need to delete the previous height column
+ALTER TABLE fifa_21_raw1
+DROP COLUMN Height;
+
+--to rename the height_int to the main name Height
+ALTER TABLE fifa_21_raw1
+RENAME COLUMN Height_Int TO Height
+
+--To convert the SM, WF IR columns
+ALTER TABLE fifa_21_raw1
+ADD COLUMN SM_Int INT;
+
+--To extract the value that we want from SM column
+UPDATE fifa_21_raw1
+SET SM_Int = LEFT(SM,1);
+
+--TO transform my data i will need to delete the previous SM column
+ALTER TABLE fifa_21_raw1 
+DROP COLUMN SM;
+
+-- to rename the column to its original name
+ALTER TABLE fifa_21_raw1 
+RENAME COLUMN SM_Int TO SM
+
+--To remove the Star symbol and also covert the values in column "W/F" and IR to integer
+UPDATE main.fifa_21_raw1
+SET IR = CAST(REPLACE(REPLACE(IR, '*', ''), '★', '') AS INT),
+    "W/F"  = CAST(REPLACE(REPLACE("W/F" , '*', ''), '★', '') AS INT);
+   
+-- To convert the IR and W/F to an Int
+ALTER TABLE main.Fifa_21_raw1 
+ALTER COLUMN IR TYPE INT;
+ALTER TABLE main.Fifa_21_raw1 
+ALTER COLUMN "W/F" TYPE INT;
+   
+-- To remove the Euro sign and as well the K and M in Value
+UPDATE main.Fifa_21_raw1 
+SET Value = 
+  CASE
+    WHEN Value LIKE '€%K' THEN CAST(REPLACE(REPLACE(Value, '€', ''), 'K', '') AS INT) * 1000
+    WHEN Value LIKE '€%M' THEN CAST(REPLACE(REPLACE(Value, '€', ''), 'M', '') AS INT) * 1000000
+    ELSE CAST(REPLACE(Value, '€', '') AS INT)
+  END;
+ 
+--To convert the column to Int
+ALTER TABLE main.Fifa_21_raw1 
+ALTER COLUMN "Value" TYPE DECIMAL;
+ 
+ -- To remove the Euro sign and as well the K and M in Wages
+UPDATE main.Fifa_21_raw1  
+SET Wage = 
+  CASE
+    WHEN Wage LIKE '€%K' THEN CAST(REPLACE(REPLACE(Wage, '€', ''), 'K', '') AS DECIMAL(10, 2)) * 1000
+    WHEN Wage LIKE '€%M' THEN CAST(REPLACE(REPLACE(Wage, '€', ''), 'M', '') AS DECIMAL(10, 2)) * 1000000
+    ELSE CAST(REPLACE(Wage, '€', '') AS DECIMAL(10, 2))
+  END;
+
+  --To convert the column to DECIMAL
+ALTER TABLE main.Fifa_21_raw1 
+ALTER COLUMN "Wage" TYPE DECIMAL;
+ 
+  -- To remove the Euro sign and as well the K and M in Release Clause
+UPDATE main.Fifa_21_raw1 
+SET "Release Clause"  = 
+  CASE
+    WHEN "Release Clause"  LIKE '€%K' THEN CAST(REPLACE(REPLACE("Release Clause"  , '€', ''), 'K', '') 
+    AS DECIMAL(10, 2)) * 1000
+    WHEN "Release Clause"  LIKE '€%M' THEN CAST(REPLACE(REPLACE("Release Clause"  , '€', ''), 'M', '') 
+    AS DECIMAL(10, 2)) * 1000000
+    ELSE CAST(REPLACE("Release Clause"  , '€', '') AS DECIMAL(10, 2))
+  END;
+ 
+ ---To change the datatype
+ALTER TABLE main.Fifa_21_raw1 
+ALTER COLUMN "Release Clause" TYPE DECIMAL;
+
+--To change the datatype of Hits Column
+UPDATE main.Fifa_21_raw1
+SET "Hits" = CAST(REPLACE("Hits", 'K', '') AS DECIMAL) * 1000
+WHERE "Hits" LIKE '%K';
+
+ALTER TABLE main.Fifa_21_raw1 
+ALTER COLUMN "Hits" TYPE INT;
+
+ -- To check the datatype of the columns   
+SELECT COLUMN_NAME, DATA_TYPE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Fifa_21_raw1';
+
+--Task 2
+		
+---Q1 Identify players who possess high value but receive relatively low wages.
+-- Used the average of both Value and Wage as a threshold 
+SELECT LongName, Value, Wage
+FROM main.Fifa_21_raw1 
+WHERE Value > (SELECT AVG(Value) FROM main.Fifa_21_raw1)
+    AND Wage < (SELECT AVG(Wage) FROM main.Fifa_21_raw1)
+GROUP BY LongName, Value, Wage
+ORDER BY Wage;
+
+SELECT *
+FROM main.Fifa_21_raw2 
+
+-- Q2 Determine the count of players available in the dataset for each position
+SELECT "Best_Position", COUNT(Name) AS PlayerCount
+FROM main.Fifa_21_raw2  
+GROUP BY "Best_Position"
+ORDER BY 2;
+
+
+-- Q3 which club has the largest representation of players in the dataset
+SELECT MAX(f2.Club), COUNT(f1.LongName) AS PlayerCount 
+FROM main.Fifa_21_raw1  AS f1
+JOIN main.Fifa_21_raw2  AS f2
+USING (ID);
+
+--Q4 List the top 10 players with the highest OVA and POT values
+SELECT LongName, "↓OVA", "POT"
+FROM main.Fifa_21_raw1  
+ORDER BY "↓OVA" DESC , POT  
+LIMIT 10;
+
+--DAY 8 & 9
+--Q1 Find the player with highest OVA and POT within each club 
+WITH RankedPlayers AS (
+    SELECT f2.club,f1.POT, f2.Name, f1."↓OVA" AS HighestOVA,
+    ROW_NUMBER  () OVER (PARTITION BY f2.Club ORDER BY f1."↓OVA" DESC) AS RowNum
+    FROM main.Fifa_21_raw2 f2
+    JOIN main.Fifa_21_raw1 f1
+    USING (ID)
+)
+SELECT club, Name, POT,HighestOVA, RowNum
+FROM RankedPlayers
+WHERE RowNum = 1
+
+--Q2 calculate the average OVA for players under 25 years old and over 30 years old in each club, and round it to 2 decimal
+SELECT Club,
+       ROUND(AVG(CASE WHEN CAST(Age AS INT) < 25 THEN "↓OVA" ELSE NULL END),2) AS AvgOVA_Under25,
+       ROUND(AVG(CASE WHEN CAST(Age AS INT) > 30 THEN "↓OVA" ELSE NULL END),2) AS AvgOVA_Over30
+FROM main.Fifa_21_raw2  
+GROUP BY Club;
+
+
+--Q3 List the player who have the same age within each club
+SELECT f2.Club, f1.Age, GROUP_CONCAT(f1.Name) AS PlayersWithSameAge
+FROM main.Fifa_21_raw1 f1
+JOIN main.Fifa_21_raw2 f2
+USING (ID)
+GROUP BY f2.Club, f1.Age
+HAVING COUNT(*) > 1;
+
+--4 FIND THE PLAYER WITH THE HIGHEST POT FOR EACH NATIONALITY
+SELECT "Name", Nationality, POT
+FROM (
+  SELECT "Name", Nationality, POT, 
+  RANK() OVER (PARTITION BY Nationality ORDER BY POT DESC) AS player_Rank
+  FROM main.Fifa_21_raw2 
+) AS RankedPlayer
+WHERE player_Rank = 1
+ORDER BY POT DESC;
+
+
+--5. RANK PLAYERS BY THEIR OVA IN DESCENDING ORDER WITHIN CLUB
+SELECT Club,"↓OVA", LongName , 
+RANK() OVER (PARTITION BY Club ORDER BY "↓OVA") AS Player_Rank
+FROM main.Fifa_21_raw2 
+ORDER BY Club, Player_Rank DESC;
+
+
