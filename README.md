@@ -55,7 +55,7 @@ This dataset is rich in information about FIFA 21 players, making it an excellen
 (c) I connected the MotherDuck for collaboration and accessibility by my teams
 
 
-![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/404902b0-47cd-4935-aa7c-f6954c929c65)
+
 
 
 
