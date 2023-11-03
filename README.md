@@ -44,7 +44,7 @@ This dataset is rich in information about FIFA 21 players, making it an excellen
 
 
 
-# WEEK 2 
+# WEEK 1 
 
 # DAY 2 & 3 CHALLENGE: 
 
@@ -53,6 +53,61 @@ This dataset is rich in information about FIFA 21 players, making it an excellen
 (b) I imported the two datasets **fifa21_raw_data** and **fifa21_raw_data_v**
 
 (c) I connected the MotherDuck for collaboration and accessibility by my teams
+
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/a8187a89-af6a-4544-baac-31cf5a5a3b42)
+
+
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/b3306d0d-419f-4a0f-af0e-1156c715d938)
+
+
+
+
+# WEEK 2 
+
+### Day 4 to 6 Challenge: Data Cleaning Process
+
+a) Converting Height and Weight to Numerical Form: For the 'Height' column, make sure to extract the numerical value (e.g., 6'0" becomes 6). For the 'Weight' column, remove the "lbs" and convert it to a numerical format.
+
+b) Converting 'Value', 'Wage', and 'Release Clause' to Numbers:
+
+c) The 'Value' column has values like '€100M' (which means 100 million) and '€10K' (which means 10,000). Strip the symbols ('€', 'M', 'K') and convert the values to actual numbers accordingly.
+
+d) The 'Wage' column also uses 'K' (e.g., '€100K'), which should be converted to thousands.
+
+e) The 'Release Clause' column follows the same pattern with 'M' and 'K'. Handling 'Star' Characters:
+
+f) Remove the 'star' character from columns where it appears and make sure the columns are in numerical format.
+
+i) Converted the 'Hits" column to an integer 
+
+![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/1d43939b-aa3b-4284-8aab-dbf4d1f23ed3)
+
+
+
+### Day 7-9 Challenge: Querying the Datasets for insights
+
+a) Identify players who possess high value but receive relatively low wages.
+
+b) Determine the count of players available in the dataset for each position.
+
+c) Find out which club has the largest representation of players in the dataset.
+
+d) List the top 10 players with the highest OVA and POT values.
+
+f) Find players with the highest OVA and POT within each club.
+
+g) Calculate the average OVA for players under 25 years old and over 30 years old in each club.
+
+h) List the players who have the same age within each club.
+
+i) Find the player with the highest POT for each nationality
+
+j) Rank players by their OVA in descending order within each club
+
+
+
+
+
 
 
 
