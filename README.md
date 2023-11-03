@@ -112,10 +112,12 @@ i) Converted the 'Hits" column to an integer
 
 ### g) Calculate the average OVA for players under 25 years old and over 30 years old in each club.
 
+**_-> Using case statement to specify each condition_**
+
 ![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/d94efb4d-b91a-4356-95c1-672eaa0eab84)
 
 
-### h) List the players who have the same age within each club.
+### h) List the players who are the same age within each club.
 
 ![image](https://github.com/Chichi126/ANALYZING-FIFA-21-/assets/140970592/53f63046-479a-4e4d-a406-d2af98591725)
 
