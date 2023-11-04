@@ -1,5 +1,5 @@
 # ANALYZING-FIFA-21
-# 30 Days DuckDB Challenge On FIFA 21 Player Dataset Analysis "Unraveling the Magic of FIFA: A Data Analysis Journey"
+## 30 Days DuckDB Challenge On FIFA 21 Player Dataset Analysis "Unraveling the Magic of FIFA: A Data Analysis Journey"
 
 
 ![](https://github.com/Chichi126/ANALYZING-FIFA-21-/blob/main/fifagif.gif)
@@ -47,9 +47,9 @@ This dataset is rich in information about FIFA 21 players, making it an excellen
 
 ## DAY 1 CHALLENGE: SETTING UP MY WORKING ENVIRONMENT
 
-**.** Created an account with MotherDuck
+- I Created an account with MotherDuck
 
-**.** Installed DuckDB through the installation instructions and guide provided
+- I Installed DuckDB through the installation instructions and guide provided
 
 
 
